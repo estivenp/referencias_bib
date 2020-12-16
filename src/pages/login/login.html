@@ -1,0 +1,44 @@
+<!--
+  Generated template for the LoginPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle *ngIf="isLogged">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Login</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <p class="caucaEverywhere">Referencias Bibliograficas</p>
+  <form>
+    <div class="padding_item">
+      <ion-item>
+        <ion-label floating [ngClass]="{'errorFomulario': errorusuario }">Usuario
+        </ion-label>
+        <ion-input [(ngModel)]="usuario" type="email" name="usuario"></ion-input>
+      </ion-item>
+      <p *ngIf="errorusuario" class="error">{{mensajeusuario}}</p>
+    </div>
+
+    <div class="padding_item">
+      <ion-item>
+        <ion-label floating [ngClass]="{'errorFomulario': errorClave }">Contraseña
+        </ion-label>
+        <ion-input [(ngModel)]="password" type="password" name="password"></ion-input>
+      </ion-item>
+      <p *ngIf="errorClave" class="error">{{mensajePassword}}</p>
+    </div>
+
+      <button ion-button size="small" expand="full" shape="round" (click)="iniciar()">
+        Ingresar</button>
+      <!-- <button ion-button size="small" expand="full" shape="round" (click)="registrar()" style="background: red;">
+        Registrarme</button> -->
+  </form>
+
+</ion-content>

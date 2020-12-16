@@ -1,0 +1,104 @@
+<!--
+  Generated template for the LoginPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{tipo}} Publicación</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <form>
+    <div class="padding_item">
+      <ion-item>
+        <ion-label floating [ngClass]="{'errorFomulario': errorTitulo }">Titulo*
+        </ion-label>
+        <ion-input [(ngModel)]="titulopub" type="text" name="titulo"></ion-input>
+      </ion-item>
+      <p *ngIf="errorTitulo" class="error">{{mensajeTitulo}}</p>
+    </div>
+
+    <div class="padding_item">
+      <ion-item>
+        <ion-label  [ngClass]="{'errorFomulario': errorAutores}">Autores*
+        </ion-label>
+      </ion-item>
+    </div>
+
+    <div class="padding_item" style="margin-left: 10%;" *ngFor="let autor of autores; let indice = index">
+      <ion-item class="col-md-6">
+          <ion-input [value]="autor"type="text" name="autor" disabled></ion-input>
+          <input type="number" class="form-control" placeholder="Nuevo Telefono" [value]="autor"
+          name="telefono" style="margin-top: 1%;margin-left: 2%;width: unset;" class="col-md-8" 
+          disabled>
+      </ion-item>
+      <button class="col-md-4" ion-button (click)="eliminarAut(indice)" color="danger" 
+      style="padding: 0;
+      padding-left: 2%;
+      padding-right: 2%;height: 30px;">Eliminar</button>
+    </div>
+
+    <div class="padding_item" style="margin-left: 10%;">
+      <ion-item>
+        <ion-input [(ngModel)]="nuevoAut" type="text" name="autorN"></ion-input>
+      </ion-item>
+      <button class="col-md-4" ion-button (click)="AgregarAut()" color="secondary" 
+      style="padding: 0;
+      padding-left: 2%;
+      padding-right: 2%;height: 30px;">Agregar</button>
+      <p *ngIf="errorAutores" class="error">{{mensajeAutores}}</p>
+    </div>
+
+    <div class="padding_item">
+      <ion-item>
+        <ion-label floating [ngClass]="{'errorFomulario': errorTipoPub }">Tipo publicación*
+        </ion-label>
+        <ion-select [(ngModel)]="tipopub" name="tipo_pub">
+          <ion-option value=1>1 - Articulo revista</ion-option>
+          <ion-option value=2>2 - Articulo evento</ion-option>
+          <ion-option value=3>3 - Otro</ion-option>
+        </ion-select>
+      </ion-item>
+      <p *ngIf="errorTipoPub" class="error">{{mensajeTipoPub}}</p>
+    </div>
+
+    <div class="padding_item">
+      <ion-item>
+        <ion-label floating>Evento o resvista publicación
+        </ion-label>
+        <ion-input [(ngModel)]="eventorevista" type="text" name="evento_revista"></ion-input>
+      </ion-item>
+    </div>
+
+    <div class="padding_item">
+      <ion-item>
+        <ion-label floating >Identificador documento
+        </ion-label>
+        <ion-input [(ngModel)]="doi" type="text" name="password"></ion-input>
+      </ion-item>
+    </div>
+
+    <div class="padding_item">
+      <ion-item>
+        <ion-label floating [ngClass]="{'errorFomulario': errorAnyo}">Año publicacion*
+        </ion-label>
+        <ion-datetime [(ngModel)]="anyopub" displayFormat="YYYY-MM-DD" placeholder="Año-Mes-Dia" name="anio_pub"></ion-datetime>
+        <!-- [(ngModel)]="event.timeStarts" -->
+      </ion-item>
+      <p *ngIf="errorAnyo" class="error">{{mensajeAnyo}}</p>
+    </div>
+
+      <button ion-button size="small" expand="full" shape="round" (click)="guardar()" style="margin-left: 25%;
+      margin-top: 10%;">
+        {{tipo}}</button>
+      <!-- <button ion-button size="small" expand="full" shape="round" (click)="registrar()" style="background: red;">
+        Registrarme</button> -->
+  </form>
+
+</ion-content>

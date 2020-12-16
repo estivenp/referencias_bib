@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Detalle</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-card style="margin-top: 0%;">
+    <ion-card-header class="titulo">
+      {{publicacion.data.titulopub}}
+      
+    </ion-card-header>
+    <ion-card-content style="margin-bottom: 0%;padding-bottom: 0%;">
+
+      <ion-list>
+
+        <p ion-item class="nom_dat">Autores: <br>
+          <a class="datos" *ngFor="let autor of publicacion.data.autores">{{autor}}<br></a>
+        </p>
+        <p ion-item class="nom_dat">Tipo publicación: <br>
+          <a class="datos">{{tipopub}}</a><br>
+        </p>
+        <p ion-item class="nom_dat" *ngIf="publicacion.data.eventorevista!=''">Evento revista: <br>
+          <a class="datos">{{publicacion.data.eventorevista}} </a>
+        </p>
+        <p ion-item class="nom_dat">Año publicación: <br>
+          <a class="datos">{{publicacion.data.anyopub}}</a>
+        </p>
+        <p ion-item class="nom_dat">Identificador bibliografico: <br>
+          <a class="datos">{{publicacion.id}}</a>
+        </p>
+        <p ion-item class="nom_dat" *ngIf="publicacion.data.doi!=''">Codigo documento: <br>
+          <a class="datos">{{publicacion.data.doi}}</a><br>
+        </p>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+  <button ion-button color="secondary" class="boton" style="margin-left: 10%;" (click)="modificar()">Modificar</button>
+  <button ion-button color="danger" class="boton" (click)="eliminar()">Eliminar</button>
+</ion-content>

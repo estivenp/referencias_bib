@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Publicaciones</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-searchbar [(ngModel)]="busqueda" placeholder="Buscar por nombre"></ion-searchbar>
+  <ion-list>
+    <button ion-item disabled>
+      <!-- <ion-icon [name]="item.icon" item-start></ion-icon> -->
+      <strong>ID referencia</strong> 
+      <div class="item-note" item-end>
+        <strong>Titulo publicación</strong>
+      </div>
+    </button>
+    <button ion-item *ngFor="let publicacion of publicaciones | publicacion: busqueda" (click)="itemTapped( publicacion)">
+      <!-- <ion-icon [name]="item.icon" item-start></ion-icon> -->
+      {{publicacion.id}}
+      <div class="item-note" item-end style="width: 70%;">
+        {{publicacion.data.titulopub}} 
+      </div>
+    </button>
+  </ion-list>
+  <ion-fab right bottom>
+    <button ion-fab color="secondary" (click)="agregar()"><ion-icon name="add"></ion-icon></button>
+  </ion-fab>
+</ion-content>

@@ -1,0 +1,74 @@
+page-login {
+
+}
+.errorFomulario
+{
+ color: red !important;
+}
+
+.error{
+    color: red;
+    height: 10px;
+    font-size: small;
+    padding-left: 16px;
+}
+
+.center_button{
+    vertical-align: middle;
+}
+
+.back_button{
+    font-size: 28px;
+    margin-right: 10px;
+}
+
+.padding_item{
+    padding-top: 25px;
+}
+
+.conatiner_olvido_clave{
+    text-align: right;
+    float: right;
+}
+
+.button{
+    width: auto;
+    height: 50px;
+    padding-top: 15px;
+    padding-right: 30px;
+    padding-left: 30px;
+}
+
+.div_button{
+    padding-top: 45px;
+    padding-right: 60px;
+    padding-left: 60px;
+    background-color: white;
+    float: inherit;
+}
+
+.button2{
+    color: #085394;
+    --border-color: #085394;
+    --border-style: solid;
+    --border-radius: 15px;
+    --border-width: 1px;
+    --background: white !important;
+    width: auto;
+    height: 36px;
+    padding-top: 2px;
+    padding-right: 2px;
+    padding-left: 2px;
+}
+.caucaEverywhere{
+    padding-top: 25px;
+    padding-bottom: 35px;
+    color: #085394;
+    font-family: var(--ion-font-family,inherit) !important;
+    font-size: 45px;
+    margin-block-start: 1px !important;
+    margin-block-end: 1px !important;
+    margin-inline-start: 0px !important;
+    margin-inline-end: 0px !important;  
+    text-align: center;
+}
