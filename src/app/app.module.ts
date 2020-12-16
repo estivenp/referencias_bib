@@ -8,7 +8,6 @@ import { ListPage } from '../pages/list/list';
 import { LoginPage } from '../pages/login/login';
 import { FormularioPage } from '../pages/formulario/formulario';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
-// import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireModule } from 'angularfire2';
 import { environment } from '../environments/environment';
 
@@ -56,7 +55,6 @@ import { PipesModule } from '../pipes/pipes.module';
     SplashScreen,
     publicacionService,
     usuarioService,
-    // AngularFirestore,
     AngularFirestoreModule,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]

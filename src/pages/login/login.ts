@@ -1,11 +1,9 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, } from 'ionic-angular';
 import { ListPage } from '../list/list';
-// import { AlertController, ToastController } from '@ionic/angular';
 import { ToastController,AlertController } from 'ionic-angular';
 import { usuarioService } from '../../app/service/usuario.service';
 
-// @IonicPage()
 @Component({
   selector: 'page-login',
   templateUrl: 'login.html',
@@ -79,7 +77,6 @@ export class LoginPage {
   }
 
   iniciar() {
-    // this.navCtrl.push(ListPage);
     if (this.validarusuario() && this.validarClave()) {
       this._usuarioService.getUsuario(this.usuario,this.password).subscribe(async res=>{
         if(res.length){
@@ -87,22 +84,18 @@ export class LoginPage {
           localStorage.setItem("isLogged","true");
           this.navCtrl.setRoot(ListPage);
           const toast = this.toastController.create({
-            // header: 'Error',
             message: "Inicio de sesión correctamente",
             duration: 3000,
             position: 'top',
-            // color: 'danger',
           });
           await toast.present();
         }
         else{
           console.log("Error");
           const toast = this.toastController.create({
-            // header: 'Error',
             message: "Usuario o contraseña incorrecta",
             duration: 3000,
             position: 'top'
-            // _color: 'danger',
           });
           await toast.present();
         }

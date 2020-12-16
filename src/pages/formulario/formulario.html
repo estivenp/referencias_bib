@@ -1,9 +1,4 @@
-<!--
-  Generated template for the LoginPage page.
 
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
   <ion-navbar>
     <button ion-button menuToggle>
@@ -89,7 +84,6 @@
         <ion-label floating [ngClass]="{'errorFomulario': errorAnyo}">Año publicacion*
         </ion-label>
         <ion-datetime [(ngModel)]="anyopub" displayFormat="YYYY-MM-DD" placeholder="Año-Mes-Dia" name="anio_pub"></ion-datetime>
-        <!-- [(ngModel)]="event.timeStarts" -->
       </ion-item>
       <p *ngIf="errorAnyo" class="error">{{mensajeAnyo}}</p>
     </div>
@@ -97,8 +91,6 @@
       <button ion-button size="small" expand="full" shape="round" (click)="guardar()" style="margin-left: 25%;
       margin-top: 10%;">
         {{tipo}}</button>
-      <!-- <button ion-button size="small" expand="full" shape="round" (click)="registrar()" style="background: red;">
-        Registrarme</button> -->
   </form>
 
 </ion-content>

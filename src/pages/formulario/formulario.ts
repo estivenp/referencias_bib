@@ -3,7 +3,6 @@ import {  NavController, NavParams } from 'ionic-angular';
 import { ToastController,AlertController } from 'ionic-angular';
 import { publicacionService } from '../../app/service/publicacion.service';
 
-// @IonicPage()
 @Component({
   selector: 'page-formulario',
   templateUrl: 'formulario.html',
@@ -117,7 +116,6 @@ export class FormularioPage {
   }
 
   guardar(){
-    // this.navCtrl.popToRoot();
     if(this.tipo=="Registrar"){
       this.agregar();
     }
@@ -132,11 +130,9 @@ export class FormularioPage {
       doi:this.doi,anyopub:this.anyopub};
       this._publicacionServ.guardarPub(this.publicacion.id,datos).then(async res=>{
         const toast = this.toastController.create({
-          // header: 'Error',
           message: "La publicación a sido modificada correctamente",
           duration: 3000,
           position: 'top'
-          // _color: 'danger',
         });
         await toast.present();
         this.navCtrl.popToRoot();
@@ -147,17 +143,14 @@ export class FormularioPage {
   }
 
   agregar() {
-    // console.log(parseInt(this.ultimoReg)+1);
     if (this.validarTitulo() && this.validarAutores()&&this.validarTipoPub()&&this.validarAnyo()) {
       var datos = {titulopub:this.titulopub,autores:this.autores,tipopub:parseInt(this.tipopub),eventorevista:this.eventorevista,
       doi:this.doi,anyopub:this.anyopub};
       this._publicacionServ.guardarPub((parseInt(this.ultimoReg)+1).toString(),datos).then(async res=>{
         const toast = this.toastController.create({
-          // header: 'Error',
           message: "La publicación a sido agregada",
           duration: 3000,
           position: 'top'
-          // _color: 'danger',
         });
         await toast.present();
         this.navCtrl.popToRoot();

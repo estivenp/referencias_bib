@@ -43,11 +43,9 @@ export class DetallePage {
           handler: () => {
             this._publicacionServ.eliminarPublicacion(this.publicacion.id).then(async res=>{
               const toast = this.toastController.create({
-                // header: 'Error',
                 message: "La publicación fue eliminada",
                 duration: 3000,
                 position: 'top',
-                // color: 'danger',
               });
               await toast.present();
               this.navCtrl.popToRoot();
